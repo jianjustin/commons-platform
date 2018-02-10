@@ -4,14 +4,18 @@
 
   <groupId>org.janine.jian</groupId>
   <artifactId>commons-all</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>${project-version}</version>
   <packaging>pom</packaging>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project-version>1.0-SNAPSHOT</project-version>
+    <junit-version>3.8.1</junit-version>
   </properties>
   <modules>
     <module>commons-utils</module>
     <module>commons-api</module>
+    <module>commons-codegen</module>
+    <module>commons-workflow</module>
   </modules>
 </project>
