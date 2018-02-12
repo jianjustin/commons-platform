@@ -7,8 +7,8 @@
     <artifactId>commons-all</artifactId>
     <version>${project-version}</version>
   </parent>
-  <artifactId>commons-utils</artifactId>
-  <name>commons-utils</name>
+  <artifactId>commons-web</artifactId>
+  <name>commons-web</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,7 +17,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit-version}</version>
+      <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
