@@ -1,13 +1,9 @@
-package org.janine.jian.utils;
-
-import java.util.Properties;
-
-import org.janine.jian.server.DataSourceDomain;
+package org.janine.jian.utils.json;
 
 import com.google.gson.Gson;
 
 /**
- * JSON工具类
+ * 基于google的gson包的json工具包
  * @author jian
  *
  */
@@ -32,13 +28,6 @@ public class JsonUtils {
 	public static <T> T from(String jsonStr,Class<T> clazz){
 		Gson gson = new Gson();
 		return gson.fromJson(jsonStr, clazz);
-	}
-	
-	public static void main(String[] args) {
-		Properties properties = PropertiesUtils.queryPropertiesList("DataSource.properties");
-		String jsonStr = PropertiesUtils.queryJsonStr(properties.toString());
-		DataSourceDomain dataSourceDomain = JsonUtils.from(jsonStr, DataSourceDomain.class);
-		System.out.print(dataSourceDomain.getUrl());
 	}
 	
 }

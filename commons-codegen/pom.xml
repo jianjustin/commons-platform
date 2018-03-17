@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.janine.jian</groupId>
-    <artifactId>commons-all</artifactId>
+    <artifactId>commons-platform</artifactId>
     <version>${project-version}</version>
   </parent>
   <artifactId>commons-codegen</artifactId>
@@ -15,17 +15,20 @@
   </properties>
   <dependencies>
     <dependency>
+      <groupId>org.janine.jian</groupId>
+      <artifactId>commons-utils</artifactId>
+      <version>${project-version}</version>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit-version}</version>
       <scope>test</scope>
     </dependency>
-    <!--  Gson: Java to Json conversion -->
     <dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-      <version>2.8.2</version>
-      <scope>compile</scope>
-    </dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>${mysql-version}</version>
+	</dependency>
   </dependencies>
 </project>

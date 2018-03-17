@@ -1,4 +1,4 @@
-package org.janine.jian.model;
+package org.janine.jian.codegen.model;
 
 /**
  * 模板实体类，用于存放实体类基本属性配置

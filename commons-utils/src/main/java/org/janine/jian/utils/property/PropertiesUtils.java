@@ -1,13 +1,9 @@
-package org.janine.jian.utils;
+package org.janine.jian.utils.property;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/**
- * 配置文件读取工具类
- * @author janine
- */
 public class PropertiesUtils {
 
 	/**
@@ -20,7 +16,6 @@ public class PropertiesUtils {
 			Properties prop = new Properties();
 			InputStream in = PropertiesUtils.class.getClassLoader().getResourceAsStream(propertiesName);
 			prop.load(in);
-			System.out.print(prop);
 			return prop;
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -39,21 +34,6 @@ public class PropertiesUtils {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	/**
-	 * 将配置文件数据转换为json格式数据
-	 * @param jsonStr
-	 * @return
-	 */
-	public static String queryJsonStr(String jsonStr){
-		jsonStr = jsonStr.replace(" ","");
-		jsonStr = jsonStr.replace("}","\"}");
-		jsonStr = jsonStr.replace("{","{\"");
-		jsonStr = jsonStr.replaceAll("=","\":\"");
-		jsonStr = jsonStr.replaceAll(",","\",\"");
-		jsonStr = jsonStr.replaceAll("=",":");
-		return jsonStr;
 	}
 	
 	public static void main(String[] args) {

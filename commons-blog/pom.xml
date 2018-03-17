@@ -7,8 +7,10 @@
     <artifactId>commons-platform</artifactId>
     <version>${project-version}</version>
   </parent>
-  <artifactId>commons-api</artifactId>
-  <name>commons-api</name>
+  <groupId>org.janine.jian</groupId>
+  <artifactId>commons-blog</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>commons-blog</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,7 +19,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit-version}</version>
+      <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

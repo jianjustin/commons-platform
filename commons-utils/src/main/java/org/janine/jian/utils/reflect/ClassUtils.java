@@ -1,4 +1,4 @@
-package org.janine.jian.utils;
+package org.janine.jian.utils.reflect;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -25,7 +25,7 @@ public class ClassUtils {
 	 * @return
 	 */
 	public static <T> T setFieldValue(T domain,String propertiesName,String propertiesValue){
-		Class clazz = domain.getClass();
+		Class<? extends Object> clazz = domain.getClass();
 		try {
 			Field field = clazz.getDeclaredField(propertiesName);
 			field.setAccessible(true);
