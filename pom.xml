@@ -22,6 +22,7 @@
     <module>commons-workflow</module>
     <module>commons-web</module>
     <module>commons-blog</module>
+    <module>commons-reptile</module>
   </modules>
   
   <dependencies>
