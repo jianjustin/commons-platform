@@ -23,6 +23,7 @@
     <module>commons-web</module>
     <module>commons-blog</module>
     <module>commons-reptile</module>
+    <module>commons-member</module>
   </modules>
   
   <dependencies>
