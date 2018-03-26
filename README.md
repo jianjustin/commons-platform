@@ -27,6 +27,6 @@
 #### B. commons-codegen
 
 * freeMarker模板引擎
-
+* `template`目录是模板路径
 
 ## 项目环境搭建
