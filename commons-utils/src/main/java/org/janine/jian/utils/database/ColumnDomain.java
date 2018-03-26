@@ -10,6 +10,8 @@ public class ColumnDomain {
     private String columnRemark;
     /** 对象字段类型**/
     private String modelType;
+    /** 对象字段名称**/
+    private String modelName;
 	public String getColumnName() {
 		return columnName;
 	}
@@ -34,5 +36,12 @@ public class ColumnDomain {
 	public void setModelType(String modelType) {
 		this.modelType = modelType;
 	}
+	public String getModelName() {
+		return modelName;
+	}
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
+	}
+	
 	
 }

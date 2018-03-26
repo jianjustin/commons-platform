@@ -53,8 +53,9 @@ public class DataBaseUtils {
 		ResultSet resultSet = connection.getMetaData().getColumns(null, "%", tableName, "%");
 		while(resultSet.next()){
 			 ColumnDomain columnDomain = new ColumnDomain();
-			 columnDomain.setColumnName(resultSet.getString("COLUMN_NAME"));
-			 columnDomain.setColumnType(resultSet.getString("TYPE_NAME").toUpperCase());
+			 columnDomain.setColumnName(resultSet.getString("COLUMN_NAME"));//字段名称
+			 columnDomain.setModelName(StringUtils.toModelName("_", columnDomain.getColumnName()));//对象名称
+			 columnDomain.setColumnType(resultSet.getString("TYPE_NAME").toLowerCase());
 			 Object modelType = properties.get(resultSet.getString("TYPE_NAME").toUpperCase());
 			 if(StringUtils.isBlank(modelType)){
 				 throw new Exception("字段类型未知");

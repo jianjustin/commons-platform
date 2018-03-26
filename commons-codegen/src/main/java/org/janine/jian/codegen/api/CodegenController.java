@@ -99,6 +99,7 @@ public class CodegenController implements CodegenApi{
 	
     public Map<String,Object> getDataMap(String tableName,List<ColumnDomain> columns){
     	if(StringUtils.isBlank(tableName))return null;
+    	/*局限于basic_member规范*/
     	String prefix = "",Prefix = "", suffix = "",Suffix = "";
 		prefix = tableName.split("_")[0];
 		Prefix = prefix.substring(0, 1).toUpperCase() + prefix.substring(1, prefix.length());
@@ -124,9 +125,9 @@ public class CodegenController implements CodegenApi{
 	public static void main(String[] args) {
 		CodegenApi codegenApi = new CodegenController();
 		try {
-			List<ColumnDomain> columns = codegenApi.getDataList("basic_member");
-			Map<String,Object> dataMap = codegenApi.getDataMap("basic_member", columns);
-			codegenApi.codegenMain("E:\\其他\\commons-platform\\commons-codegen\\src\\main\\resources\\templates\\templateCustom", dataMap, "F:\\test");
+			List<ColumnDomain> columns = codegenApi.getDataList("member_user");
+			Map<String,Object> dataMap = codegenApi.getDataMap("member_user", columns);
+			codegenApi.codegenMain("I:\\workSpaceCustom\\docs\\template", dataMap, "I:\\workSpaceCustom\\commons-platform\\commons-member\\src\\main\\java\\org\\janine\\jian\\etm");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
