@@ -19,6 +19,9 @@ public class ${TableName}Controllor implements ${TableName}Api{
     @Autowired
     private BaseQueryRepositoryImpl<${TableName}, Serializable> baseQueryRepositoryImpl;
 	
+
+//----------------------------产品级实现------------------------------------------------------------------------------------------------------
+	
 	public ResponseEntity<?> save(${TableName} ${tableName}) {
     	${tableName}Service.save(${tableName});
     	return new ResponseEntity<${TableName}>(HttpStatus.OK);
@@ -33,6 +36,14 @@ public class ${TableName}Controllor implements ${TableName}Api{
 		${tableName}Service.update(${tableName});
 		return new ResponseEntity<${TableName}>(HttpStatus.OK);
 	}
+
+
+//----------------------------产品级实现------------------------------------------------------------------------------------------------------
+
+
+//----------------------------应用级实现------------------------------------------------------------------------------------------------------	
+//----------------------------应用级实现------------------------------------------------------------------------------------------------------
+
     
 	public ${TableName}Service get${TableName}Service() {
 		return ${tableName}Service;

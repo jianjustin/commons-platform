@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Api(value = "${Prefix}_${Suffix}表接口")
 public interface ${TableName}Api {
 
+//----------------------------产品级实现------------------------------------------------------------------------------------------------------
+
 	@ApiOperation(value = "创建${Prefix}_${Suffix}", notes = "", response = ${Prefix}${Suffix}.class, tags = { "${prefix}.${suffix}",})
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "保存成功", response = ${Prefix}${Suffix}.class),
@@ -47,5 +49,8 @@ public interface ${TableName}Api {
 			@ApiParam(value = "${Prefix}_${Suffix}表对象", required = true) @RequestBody ${Prefix}${Suffix} ${prefix}${Suffix});
 	
 
+//----------------------------产品级实现------------------------------------------------------------------------------------------------------
+//----------------------------应用级实现------------------------------------------------------------------------------------------------------
+//----------------------------应用级实现------------------------------------------------------------------------------------------------------
 	
 }
