@@ -13,7 +13,7 @@ import org.springframework.stereotype.Controller;
 
 
 @Controller
-public class ${TableName}Cotrollor implements ${TableName}Api{
+public class ${TableName}Controllor implements ${TableName}Api{
     @Autowired
 	private ${TableName}Service ${tableName}Service;
     @Autowired
