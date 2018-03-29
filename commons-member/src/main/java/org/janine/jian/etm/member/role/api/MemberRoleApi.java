@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Api(value = "Member_Role表接口")
 public interface MemberRoleApi {
 
+//----------------------------产品级实现------------------------------------------------------------------------------------------------------
+
 	@ApiOperation(value = "创建Member_Role", notes = "", response = MemberRole.class, tags = { "member.role",})
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "保存成功", response = MemberRole.class),
@@ -47,5 +49,8 @@ public interface MemberRoleApi {
 			@ApiParam(value = "Member_Role表对象", required = true) @RequestBody MemberRole memberRole);
 	
 
+//----------------------------产品级实现------------------------------------------------------------------------------------------------------
+//----------------------------应用级实现------------------------------------------------------------------------------------------------------
+//----------------------------应用级实现------------------------------------------------------------------------------------------------------
 	
 }

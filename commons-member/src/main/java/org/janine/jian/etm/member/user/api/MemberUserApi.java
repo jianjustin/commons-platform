@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Api(value = "Member_User表接口")
 public interface MemberUserApi {
 
+//----------------------------产品级实现------------------------------------------------------------------------------------------------------
+
 	@ApiOperation(value = "创建Member_User", notes = "", response = MemberUser.class, tags = { "member.user",})
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "保存成功", response = MemberUser.class),
@@ -47,5 +49,8 @@ public interface MemberUserApi {
 			@ApiParam(value = "Member_User表对象", required = true) @RequestBody MemberUser memberUser);
 	
 
+//----------------------------产品级实现------------------------------------------------------------------------------------------------------
+//----------------------------应用级实现------------------------------------------------------------------------------------------------------
+//----------------------------应用级实现------------------------------------------------------------------------------------------------------
 	
 }

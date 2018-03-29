@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Api(value = "Member_Menucontrol表接口")
 public interface MemberMenucontrolApi {
 
+//----------------------------产品级实现------------------------------------------------------------------------------------------------------
+
 	@ApiOperation(value = "创建Member_Menucontrol", notes = "", response = MemberMenucontrol.class, tags = { "member.menucontrol",})
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "保存成功", response = MemberMenucontrol.class),
@@ -47,5 +49,8 @@ public interface MemberMenucontrolApi {
 			@ApiParam(value = "Member_Menucontrol表对象", required = true) @RequestBody MemberMenucontrol memberMenucontrol);
 	
 
+//----------------------------产品级实现------------------------------------------------------------------------------------------------------
+//----------------------------应用级实现------------------------------------------------------------------------------------------------------
+//----------------------------应用级实现------------------------------------------------------------------------------------------------------
 	
 }

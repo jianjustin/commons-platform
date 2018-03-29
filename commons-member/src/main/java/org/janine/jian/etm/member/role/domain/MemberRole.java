@@ -27,12 +27,6 @@ public class MemberRole{
     /**
     *
     */
-    @Column(name = "ROLE_CODE",columnDefinition = "varchar")
-    private String roleCode;
-
-    /**
-    *
-    */
     @Column(name = "MEMBER_ROLE_CODE",columnDefinition = "varchar")
     private String memberRoleCode;
 
@@ -73,14 +67,6 @@ public class MemberRole{
 
     public void setpkId(Long pkId) {
         this.pkId = pkId;
-    }
-
-    public String getroleCode() {
-        return this.roleCode;
-    }
-
-    public void setroleCode(String roleCode) {
-        this.roleCode = roleCode;
     }
 
     public String getmemberRoleCode() {

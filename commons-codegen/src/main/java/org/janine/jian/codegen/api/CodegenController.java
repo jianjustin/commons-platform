@@ -125,8 +125,8 @@ public class CodegenController implements CodegenApi{
 	public static void main(String[] args) {
 		CodegenApi codegenApi = new CodegenController();
 		try {
-			List<ColumnDomain> columns = codegenApi.getDataList("member_user");
-			Map<String,Object> dataMap = codegenApi.getDataMap("member_user", columns);
+			List<ColumnDomain> columns = codegenApi.getDataList("member_menucontrol");
+			Map<String,Object> dataMap = codegenApi.getDataMap("member_menucontrol", columns);
 			codegenApi.codegenMain("I:\\workSpaceCustom\\docs\\template", dataMap, "I:\\workSpaceCustom\\commons-platform\\commons-member\\src\\main\\java\\org\\janine\\jian\\etm");
 		} catch (Exception e) {
 			e.printStackTrace();
