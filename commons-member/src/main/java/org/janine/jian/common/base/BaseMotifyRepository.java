@@ -22,14 +22,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BaseMotifyRepository<T,ID extends Serializable> extends JpaRepository<T, Serializable>,CrudRepository<T, Serializable>,PagingAndSortingRepository<T,Serializable>,JpaSpecificationExecutor<T>{
 
-	/**
-	 * 保存or更新
-	 */
-	@Transactional
-	public T save(T entity);
-	/**
-	 * 删除
-	 */
-	@Transactional
-	public void delete(T entity);
+
 }
