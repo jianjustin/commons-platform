@@ -1,8 +1,12 @@
 package ${package_name}.domain;
-import javax.persistence.*;
-
-import java.math.BigDecimal;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
 * 描述：${table_name}模型
@@ -15,57 +19,24 @@ public class ${TableName}{
     <#if model_column?exists>
         <#list model_column as model>
     /**
-    *${model.columnComment!}
+    *${model.columnRemark!}
     */
-    <#if (model.columnType = 'varchar' || model.columnType = 'text')>
     @Column(name = "${model.columnName}",columnDefinition = "${model.columnType}")
-    private String ${model.changeColumnName?uncap_first};
-
-    </#if>
-    <#if model.columnType = 'timestamp' ||model.columnType = 'datetime' || model.columnType = 'date' || model.columnType = 'time'>
-    @Column(name = "${model.columnName}",columnDefinition = "${model.columnType}")
-    private Date ${model.changeColumnName?uncap_first};
-
-    </#if>
-	<#if model.columnType = 'double'>
-    @Column(name = "${model.columnName}",columnDefinition = "${model.columnType}")
-    private Double ${model.changeColumnName?uncap_first};
-
-    </#if>
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    private ${model.modelType!} ${model.modelName?uncap_first};
         </#list>
     </#if>
 
 <#if model_column?exists>
 <#list model_column as model>
 <#if (model.columnType = 'varchar' || model.columnType = 'text')>
-    public String get${model.changeColumnName}() {
-        return this.${model.changeColumnName?uncap_first};
+    public ${model.modelType} get${model.modelName}() {
+        return this.${model.modelName?uncap_first};
     }
-
-    public void set${model.changeColumnName}(String ${model.changeColumnName?uncap_first}) {
-        this.${model.changeColumnName?uncap_first} = ${model.changeColumnName?uncap_first};
+    public void set${model.modelName}(${model.modelType} ${model.modelName?uncap_first}) {
+        this.${model.modelName?uncap_first} = ${model.modelName?uncap_first};
     }
-
-</#if>
-<#if model.columnType = 'timestamp' ||model.columnType = 'datetime' || model.columnType = 'date' || model.columnType = 'time'>
-    public Date get${model.changeColumnName}() {
-        return this.${model.changeColumnName?uncap_first};
-    }
-
-    public void set${model.changeColumnName}(Date ${model.changeColumnName?uncap_first}) {
-        this.${model.changeColumnName?uncap_first} = ${model.changeColumnName?uncap_first};
-    }
-
-</#if>
-<#if model.columnType = 'double'>
-    public Double get${model.changeColumnName}() {
-        return this.${model.changeColumnName?uncap_first};
-    }
-
-    public void set${model.changeColumnName}(Double ${model.changeColumnName?uncap_first}) {
-        this.${model.changeColumnName?uncap_first} = ${model.changeColumnName?uncap_first};
-    }
-
+	
 </#if>
 </#list>
 </#if>

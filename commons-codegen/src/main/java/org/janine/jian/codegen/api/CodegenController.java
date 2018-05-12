@@ -115,8 +115,8 @@ public class CodegenController implements CodegenApi{
         dataMap.put("Prefix", Prefix);
         dataMap.put("suffix", suffix);//表名称
         dataMap.put("Suffix", Suffix);
-        dataMap.put("root_package_name", "org.janine.jian");
-        dataMap.put("package_name", "org.janine.jian.etm."+prefix+"."+suffix);
+        dataMap.put("root_package_name", "org.jerry.light4j.member");
+        dataMap.put("package_name", "org.jerry.light4j.member.business."+prefix+"."+suffix);
         dataMap.put("model_column", columns);
     	return dataMap;
     }
@@ -125,9 +125,9 @@ public class CodegenController implements CodegenApi{
 	public static void main(String[] args) {
 		CodegenApi codegenApi = new CodegenController();
 		try {
-			List<ColumnDomain> columns = codegenApi.getDataList("member_menucontrol");
-			Map<String,Object> dataMap = codegenApi.getDataMap("member_menucontrol", columns);
-			codegenApi.codegenMain("I:\\workSpaceCustom\\docs\\template", dataMap, "I:\\workSpaceCustom\\commons-platform\\commons-member\\src\\main\\java\\org\\janine\\jian\\etm");
+			List<ColumnDomain> columns = codegenApi.getDataList("member_authority");
+			Map<String,Object> dataMap = codegenApi.getDataMap("member_authority", columns);
+			codegenApi.codegenMain("E:\\workspace\\githubWorkSpace\\commons-platform\\commons-codegen\\src\\main\\resources\\templates\\templateCustom", dataMap, "E:\\workspace");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

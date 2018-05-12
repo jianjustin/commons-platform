@@ -1,6 +1,6 @@
 package ${package_name}.service.impl;
 
-import ${root_package_name}.common.base.impl.BaseQueryRepositoryImpl;
+import ${root_package_name}.common.base.repository.impl.BaseQueryRepositoryImpl;
 import ${package_name}.domain.${TableName};
 import ${package_name}.repository.${TableName}Repository;
 import ${package_name}.service.${TableName}Service;
@@ -52,7 +52,7 @@ public class ${TableName}ServiceImpl implements ${TableName}Service{
 	public ${TableName}Repository get${TableName}Repository() {
 		return ${tableName}Repository;
 	}
-	public void set${TableName}Repository(${TableName}Repository ${TableName}Repository) {
+	public void set${TableName}Repository(${TableName}Repository ${tableName}Repository) {
 		this.${tableName}Repository = ${tableName}Repository;
 	}
 	public BaseQueryRepositoryImpl<${TableName}, Serializable> getBaseQueryRepositoryImpl() {
