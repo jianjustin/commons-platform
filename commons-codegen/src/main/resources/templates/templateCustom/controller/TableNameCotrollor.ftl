@@ -1,6 +1,8 @@
 package ${package_name}.controller;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 import ${package_name}.domain.${Prefix}${Suffix};
 import ${package_name}.repository.${Prefix}${Suffix}Repository;
@@ -29,9 +31,11 @@ public class ${Prefix}${Suffix}Cotrollor{
     private BaseQueryRepositoryImpl<${Prefix}${Suffix}, Serializable> baseQueryRepositoryImpl;
     @Autowired
 	private ${Prefix}${Suffix}Repository ${prefix}${Suffix}Repository;
+	
+	private ResponseEntity<Map<String,Object>> responseEntity;
     
     @ApiOperation(value="数据插入", notes="创建${prefix}_${suffix}数据",response = ${Prefix}${Suffix}.class, tags = { "${prefix}.${suffix}",})
-    @RequestMapping(value="/save", method=RequestMethod.POST, produces = "application/json; charset=UTF-8", consumes = {"text/plain", "application/*"})
+    @RequestMapping(value="/save", method=RequestMethod.POST, produces = "application/json; charset=UTF-8", consumes = {"text/plain", "application/json"})
 	public ResponseEntity<?> save(
 			@ApiParam(value = "${prefix}_${suffix}数据", required = true) @RequestBody ${Prefix}${Suffix} ${prefix}${Suffix}) {
     	${prefix}${Suffix}Service.save(${prefix}${Suffix});
@@ -39,7 +43,7 @@ public class ${Prefix}${Suffix}Cotrollor{
 	}
     
     @ApiOperation(value="数据删除", notes="删除${prefix}_${suffix}数据",response = ${Prefix}${Suffix}.class, tags = { "${prefix}.${suffix}",})
-    @RequestMapping(value="/delete/{${prefix}${Suffix}Code}", method=RequestMethod.DELETE, produces = "application/json; charset=UTF-8", consumes = {"text/plain", "application/*"})
+    @RequestMapping(value="/delete/{${prefix}${Suffix}Code}", method=RequestMethod.DELETE, produces = "application/json; charset=UTF-8", consumes = {"text/plain", "application/json"})
 	public ResponseEntity<?> delete(
 			@ApiParam(value = "${prefix}_${suffix}数据code", required = true) @PathVariable String ${prefix}${Suffix}Code) {
 		${Prefix}${Suffix} old${Prefix}${Suffix} = ${prefix}${Suffix}Repository.findBy${Prefix}${Suffix}Code(${prefix}${Suffix}Code);
@@ -48,7 +52,7 @@ public class ${Prefix}${Suffix}Cotrollor{
 	}
     
     @ApiOperation(value="数据更新", notes="更新${prefix}_${suffix}数据",response = ${Prefix}${Suffix}.class, tags = { "${prefix}.${suffix}",})
-    @RequestMapping(value="/update", method=RequestMethod.PUT, produces = "application/json; charset=UTF-8", consumes = {"text/plain", "application/*"})
+    @RequestMapping(value="/update", method=RequestMethod.PUT, produces = "application/json; charset=UTF-8", consumes = {"text/plain", "application/json"})
 	public ResponseEntity<?> update(
 			@ApiParam(value = "${prefix}_${suffix}数据", required = true) @RequestBody ${Prefix}${Suffix} ${prefix}${Suffix}) {
 		${prefix}${Suffix}Service.update(${prefix}${Suffix});
@@ -56,7 +60,7 @@ public class ${Prefix}${Suffix}Cotrollor{
 	}
 	
     @ApiOperation(value="数据查询", notes="查询${prefix}_${suffix}数据",response = ${Prefix}${Suffix}.class, tags = { "${prefix}.${suffix}",})
-    @RequestMapping(value="/queryByCode/{${prefix}${Suffix}Code}", method=RequestMethod.GET, produces = "application/json; charset=UTF-8", consumes = {"text/plain", "application/*"})
+    @RequestMapping(value="/queryByCode/{${prefix}${Suffix}Code}", method=RequestMethod.GET, produces = "application/json; charset=UTF-8", consumes = {"text/plain", "application/json"})
     public ResponseEntity<?> queryByCode(
 			@ApiParam(value = "${prefix}_${suffix}数据code", required = true) @PathVariable String ${prefix}${Suffix}Code) {
 		${prefix}${Suffix}Repository.findBy${Prefix}${Suffix}Code(${prefix}${Suffix}Code);

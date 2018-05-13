@@ -22,7 +22,7 @@ public class ${TableName}{
     *${model.columnRemark!}
     */
     @Column(name = "${model.columnName}",columnDefinition = "${model.columnType}")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private ${model.modelType!} ${model.modelName?uncap_first};
         </#list>
     </#if>
