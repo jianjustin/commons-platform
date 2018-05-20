@@ -3,6 +3,7 @@ package org.janine.jian.codegen.api;
 import java.util.List;
 import java.util.Map;
 
+import org.janine.jian.codegen.workingModel.DataDomain;
 import org.janine.jian.utils.database.ColumnDomain;
 
 /**
@@ -28,6 +29,14 @@ public interface CodegenApi {
 	 * @throws Exception 
 	 */
 	public List<ColumnDomain> getDataList(String tableName) throws Exception;
+	
+	/**
+	 * 根据数据库配置和表名称获取表字段信息
+	 * @param tableName
+	 * @return
+	 * @throws Exception 
+	 */
+	//public List<DataDomain> getDataList() throws Exception;
 	
 	/**
 	 * 根据表名称和表字段信息生成映射信息
