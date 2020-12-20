@@ -1,4 +1,4 @@
-package org.janine.jian.customer;
+package org.janine.jian.repository;
 
 import java.io.Serializable;
 

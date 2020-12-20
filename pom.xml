@@ -27,8 +27,7 @@
     <module>commons-utils</module>
     <module>commons-codegen</module>
     <module>commons-member</module>
-    <module>commons-model</module>
-    <module>commons-dao</module>
+    <module>commons-customer</module>
   </modules>
   
   <dependencies>

@@ -3,6 +3,8 @@ package org.janine.jian.customer;
 import java.sql.Date;
 
 import org.janine.jian.model.Customer;
+import org.janine.jian.repository.CustomerRepository;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,6 @@ public class CustomerRespositoryUnitTest {
     private CustomerRepository customerRepository;
 
     @Test
-    @Rollback(false)
     public void save() {
     	java.util.Date date = new java.util.Date();
 	    Customer customer = new Customer();
@@ -36,7 +37,7 @@ public class CustomerRespositoryUnitTest {
 	    customer.setUserStatus(1);
 	    customer.setModifiedTime(new Date(date.getTime()));
 	    Customer result = customerRepository.save(customer);
-	    
+	    Assert.assertNotNull(result);
     }
 
 	public TestEntityManager getEntityManager() {
